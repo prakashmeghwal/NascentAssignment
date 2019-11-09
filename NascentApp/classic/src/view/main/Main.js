@@ -15,7 +15,8 @@ Ext.define('NascentApp.view.main.Main', {
 
 		'NascentApp.view.main.MainController',
 		'NascentApp.view.main.MainModel',
-		'NascentApp.view.main.List'
+		'NascentApp.view.main.List',
+		'NascentApp.view.Login.UserInformation'
 	],
 
 	controller: 'main',
@@ -91,23 +92,16 @@ Ext.define('NascentApp.view.main.Main', {
 				}
 			]
 		}, {
-			title: 'Users',
+
+			title: 'Users Information',
 			iconCls: 'fa-user',
-			bind: {
-				html: '{loremIpsum}'
-			}
-		}, {
-			title: 'Groups',
-			iconCls: 'fa-users',
-			bind: {
-				html: '{loremIpsum}'
-			}
-		}, {
-			title: 'Settings',
-			iconCls: 'fa-cog',
-			bind: {
-				html: '{loremIpsum}'
-			}
+			items: [{
+					xtype: 'userInformation',
+					bind: {
+						values: '{record}'
+					}
+				}
+			]
 		}
 	]
 });
