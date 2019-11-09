@@ -2,26 +2,35 @@
  * This view is an example list of people.
  */
 Ext.define('NascentApp.view.main.List', {
-    extend: 'Ext.grid.Panel',
-    xtype: 'mainlist',
+	extend: 'Ext.grid.Panel',
+	xtype: 'mainlist',
 
-    requires: [
-        'NascentApp.store.Personnel'
-    ],
+	requires: [
+		'NascentApp.store.UserInfo'
+	],
 
-    title: 'Personnel',
+	title: 'User Information',
 
-    store: {
-        type: 'personnel'
-    },
+	store: 'UserInfo',
 
-    columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
-    ],
+	columns: [{
+			text: 'User Name',
+			dataIndex: 'userName'
+		}, {
+			text: 'Name',
+			dataIndex: 'firstName'
+		}, {
+			text: 'Email',
+			dataIndex: 'emailID',
+			flex: 1
+		}, {
+			text: 'DoB',
+			dataIndex: 'dob',
+			flex: 1
+		}
+	],
 
-    listeners: {
-        select: 'onItemSelected'
-    }
+	listeners: {
+		select: 'onItemSelected'
+	}
 });
